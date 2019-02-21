@@ -7,10 +7,35 @@
     <title>Document</title>
     <link rel="stylesheet" href="normalize.css">
     <link rel="stylesheet" href="proto.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="main2.css">
 </head>
 <body>
     <main>
+        <div id="body" style="overflow:hidden">
+            <div id="abc">
+                <!-- Popup Div commence ici -->
+                <div id="popupContact">
+                    <!-- Contact Form -->
+                    <form action="#" id="form" method="post" name="form">
+                        <img id="close" src="885830_close_512x512.png" onclick ="div_hide()">
+                        <h2>Présentez-vous et recevez nos suggestions</h2>
+                        <hr>
+                        <input id="name" name="name" placeholder="Nom" type="text">
+                        <input id="email" name="email" placeholder="Email" type="text">
+                        <textarea id="msg" name="message" placeholder="Message"></textarea>
+                        <a href="javascript:%20check_empty()" id="submit">Envoyer</a>
+                    </form>
+                </div>
+            <!-- Popup Div fini ici -->
+            </div>
+            <!-- Popup Button -->
+            <!-- <button id="popup" onclick="div_show()">click !</button> -->
+            <div id='contact'>
+                <img id="displaycontactform" src="icons8-paper-plane-64.png" onclick="div_show()">
+            </div>
+        </div>
         <div id='background'>
             <h1>Envie de ?</h1>
             <div id="animation">
@@ -24,8 +49,37 @@
                 </form>
             </div>
         </div>
+        <!-- The Modal -->
+        <div id="myModal" class="modal">
+    
+            <!-- Modal content -->
+            <div class="modal-content">
+                <div id="recette">
+                    <figure>
+                        <img src="plat1.jpg" alt="">
+                        <figcaption>
+                            <h3>Bouillabaisse</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit impedit delectus velit vero rerum corrupti a doloremque dolorum odio assumenda.</p>
+                        </figcaption>
+                    </figure>
+                </div>
+                <div id="resto">
+                    <figure>
+                        <img src="chezmichou.jpg" alt="">
+                        <figcaption>
+                            <h3>Chez Michou</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit impedit delectus velit vero rerum corrupti a doloremque dolorum odio assumenda.</p>
+                        </figcaption>
+                    </figure>
+                </div>
+                <button id="cook">Je cuisine</button><button id="flemme">J'ai la flemme</button>
+                <span class="close"><i class="far fa-times-circle"></i></span>
+            </div>
+          
+        </div>
     </main>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="main.js"></script>
+    <script src="main2.js"></script>
 </body>
 </html>

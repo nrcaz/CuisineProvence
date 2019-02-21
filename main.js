@@ -1,3 +1,5 @@
+// ANIMATION
+
 let tomate = $('#tomate');
 let steak = $('#steak');
 let wine = $('#wine');
@@ -28,7 +30,7 @@ function animateIcon(element) {
 	element.css({
 		visibility : 'visible'
 	});
-	element.animate({ left: '4rem' }, 500).animate({ left: '4rem' }, 300).fadeOut();
+	element.animate({ left: '5rem' }, 500).animate({ left: '5rem' }, 300).fadeOut();
 }
 function animateForm() {
 	searchbar.animate(
@@ -56,3 +58,69 @@ function animateTomate() {
 }
 
 setTimeout(animateTomate, 1000);
+
+// MODALE
+
+// Get the modal
+let modal = document.getElementById('myModal');
+
+// Get the button that opens the modal
+let btn = document.getElementById('myBtn');
+
+// Get the <span> element that closes the modal
+let span = document.getElementsByClassName('close')[0];
+
+// FORM HANDLING
+document.querySelector('#searchbar').addEventListener('submit', function(e) {
+	e.preventDefault();
+	$(modal)
+		.css({
+			display : 'block',
+			opacity : '0'
+		})
+		.animate(
+			{
+				opacity : '1'
+			},
+			300
+		);
+	window.onclick = function(event) {
+		if (event.target == modal) {
+			modal.style.display = 'none';
+		}
+	};
+	span.onclick = function() {
+		modal.style.display = 'none';
+	};
+});
+
+// ELEMENTS
+let buttonCook = $('#cook');
+let buttonResto = $('#flemme');
+let recette = $('#recette');
+let resto = $('#resto');
+
+// BUTTON Je cuisine
+
+document.querySelector('#cook').addEventListener('click', function(e) {
+	buttonCook.hide().fadeIn();
+	buttonResto.hide().fadeIn();
+	recette
+		.css({
+			display : 'block'
+		})
+		.hide()
+		.fadeIn();
+	resto.hide();
+});
+document.querySelector('#flemme').addEventListener('click', function(e) {
+	buttonCook.hide().fadeIn();
+	buttonResto.hide().fadeIn();
+	resto
+		.css({
+			display : 'block'
+		})
+		.hide()
+		.fadeIn();
+	recette.hide();
+});
